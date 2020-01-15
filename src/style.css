@@ -14,11 +14,14 @@ code, pre {
     --copy-background-color: #dfdae7;
     --text-color: #222;
     --header-color: var(--wrap-accent-color);
+    --header-font-family: 'Noticia Text',  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    --copy-font-family: 'Ibarra Real Nova', 'Roboto Slab', 'Times', serif;
 }
 @media (prefers-color-scheme: dark) {
     :root {
         --wrap-background-color: #111;
         --text-color: #dfdae7;
+        --wrap-accent-color: #9957b8;
         --copy-background-color: var(--wrap-background-color);
     }
 }
@@ -32,12 +35,12 @@ body {
     background: repeating-linear-gradient(
         -69deg,
         var(--wrap-background-color),
-        var(--wrap-background-color), 20px,
-        var(--wrap-accent-color) 20px,
-        var(--wrap-accent-color) 60px
+        var(--wrap-background-color), 25px,
+        var(--wrap-accent-color) 25px,
+        var(--wrap-accent-color) 71px
       );
     display: grid;
-    grid-template-rows: 5ch 1fr 5ch;
+    grid-template-rows: 10ch 1fr 5ch;
     grid-template-columns: 1ch 90ch 1ch;
     grid-template-areas: 
         ". header ."
@@ -52,7 +55,7 @@ body {
 h1, h2, h3, h4, h5, h6,
 a {
     color: var(--header-color);
-    font-family: 'Bookman', 'Helvetica';
+    font-family: var(--header-font-family);
 }
 
 p, span {
@@ -110,7 +113,7 @@ article {
 }
 
 article p {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-family: var(--copy-font-family);
     font-weight: 300;
     font-size: 16px;
 }
@@ -146,25 +149,27 @@ footer {
     body {
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: 5ch 1fr 5ch;
+        grid-template-rows: 10ch 1fr 5ch;
         grid-template-areas: 
             "header"
             "main"
             "footer";
         max-width: max-content;
+        grid-row-gap: 1ch;
         align-items: center;
+        padding: 0 1ch;
+    }
+    main {
         padding: 0 1ch;
     }
 }
 
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 450px) {
     body {
         padding: 0;
     }
-    header {
-        height: 10vh;
-    }
+
     header > nav ul li {
         display: block;
     }
@@ -172,3 +177,4 @@ footer {
         content: '';
     }
 }
+

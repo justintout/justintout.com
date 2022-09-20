@@ -106,8 +106,9 @@ img {
 }
 
 footer {
-    padding-top: 10ch;
+    display: flex;
     font-size: smaller;
+    justify-content: end;
 }
 
 hr.blog-divider {

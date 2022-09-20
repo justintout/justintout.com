@@ -104,9 +104,38 @@ img {
     object-fit: cover;
 }
 
+hr.blog-divider {
+    overflow: visible;
+    padding: 0;
+    border: none;
+    border-top: medium double var(--wrap-accent-color);
+    color: var(--wrap-accent-color);
+    text-align: center;
+    margin-top: 10ch;
+}
+hr.blog-divider:after {
+    content: '📰';
+    font-size: 1.5em;
+    background: var(--copy-background-color);
+    position: relative;
+    display: inline-block;
+    padding: 0 .5em;
+    line-height: 1.5em;
+    background-color: var(--copy-background-color);
+}
+
+hr.post-divider {
+    border: 0;
+    width: 50%;
+    background: linear-gradient(to right, transparent, var(--wrap-accent-color), transparent);
+    padding-top: 1px;
+    margin-block: 3ch;
+}
+
 article {
     margin: auto;
     max-width: 80ch;
+    padding-block: 1ch;
 }
 
 article p {

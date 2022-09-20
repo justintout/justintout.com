@@ -39,7 +39,6 @@ body {
         ". header ."
         ". main ." 
         ". footer .";
-    grid-row-gap: 1px;
     max-width: 92ch;
     align-items: center;
     min-height: 100vh;
@@ -62,6 +61,7 @@ p, span, li {
 
 header, main, footer {
     background-color: var(--copy-background-color);
+    font-family: var(--copy-font-family);
     height: 100%;
 }
 
@@ -92,6 +92,7 @@ header > nav ul li:not(:first-child):before {
 
 main {
     grid-area: main;
+    padding-inline: 5ch;
 }
 
 aside {
@@ -104,6 +105,11 @@ img {
     object-fit: cover;
 }
 
+footer {
+    padding-top: 10ch;
+    font-size: smaller;
+}
+
 hr.blog-divider {
     overflow: visible;
     padding: 0;
@@ -112,12 +118,14 @@ hr.blog-divider {
     color: var(--wrap-accent-color);
     text-align: center;
     margin-top: 10ch;
+    width: 90%;
 }
 hr.blog-divider:after {
     content: '📰';
     font-size: 1.5em;
     background: var(--copy-background-color);
     position: relative;
+    top: -0.75em;
     display: inline-block;
     padding: 0 .5em;
     line-height: 1.5em;

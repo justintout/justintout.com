@@ -3,3 +3,6 @@ node_modules
 dist
 Makefile
 .parcel-cache
+/test-results/
+/playwright-report/
+/playwright/.cache/

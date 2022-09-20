@@ -32,13 +32,6 @@ html {
 
 body {
     margin: auto;
-    background: repeating-linear-gradient(
-        -69deg,
-        var(--wrap-background-color),
-        var(--wrap-background-color), 50px,
-        var(--wrap-accent-color) 25px,
-        var(--wrap-accent-color) 71px
-      );
     display: grid;
     grid-template-rows: 10ch 1fr 5ch;
     grid-template-columns: 1px auto 1px;
@@ -128,6 +121,23 @@ article h2.collapsed ~ div > p:nth-child(n+3) {
 
 article h2.expanded ~ div > p:nth-child(n+3) {
     display: block;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(5deg); }
+   95% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+article a.article-expander {
+    display: inline-block;
+    animation: wiggle 2s infinite;
+}
+
+article a.article-expander:hover {
+    animation: none;
 }
 
 .article-title {

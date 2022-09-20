@@ -1,11 +1,13 @@
-window.addEventListener('hashchange', (event) => {
-    const id = window.location.hash.slice(1);
-    const prev = event.oldURL.includes('#') ? event.oldURL.split('#')[1] : '';
-    if (prev == '' && id.length) {
-        console.log(`hope you enjoy your first article of the visit, "${titleFromSlug(id)} :)"`);
-    }
-    expandArticle(id);
-});
+function main() {
+    window.addEventListener('hashchange', (event) => {
+        const id = window.location.hash.slice(1);
+        const prev = event.oldURL.includes('#') ? event.oldURL.split('#')[1] : '';
+        if (prev == '' && id.length) {
+            console.log(`hope you enjoy your first article of the visit, "${titleFromSlug(id)} :)"`);
+        }
+        expandArticle(id);
+    });
+}
 
 function titleFromSlug(slug: string): string {
     const elems = Array.from(document.querySelectorAll<HTMLHeadingElement>('article > h2'))
@@ -50,3 +52,7 @@ function collapseArticle(slug: string) {
         a.text = 'more...';
     }
 }
+
+(async () => {
+    main();
+})();

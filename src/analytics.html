@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Custom Event Analytics Hello World</title>
+  </head>
+  <body>
+    <div>
+      <h1>This page is a scratch test for Google Analytics custom events.</h1>
+      <h1>I have to implement this for work, so this is my "Hello World" for these events.</h1>
+      <h1>Google Analytics will be loaded on this page and some random info will be sent to my Analytics dashboard.</h1>
+      <h1>I'm doing absolutely nothing with these metrics other than making sure I know how to collect them.</h1>
+      <h1>Analytics is not present anywhere else on my site.</h1>
+    </div>
+    <button id="redButton" style="color:red">Press me!</button>
+    <button id="blueButton" style="color:#00f">Press me!</button>
+  </body>
+  <script>
+    !function(){var e=document.createElement("script");e.src="https://www.googletagmanager.com/gtm.js?id=GTM-KLQZJKS",e.async=!0;var t=document.getElementsByTagName("head")[0];window.dataLayer=window.dataLayer||[];var n=function(e){return window.dataLayer.push(e)};n({version:"0.0.1"}),n({event:"gtm.js","gtm.start":Date.now()}),t.insertBefore(e,t.childNodes[0]),document.querySelector("#redButton").addEventListener("click",function(e){console.log(e),n({event:"button_press",color:"red",timestamp:e.timeStamp})}),document.querySelector("#blueButton").addEventListener("click",function(e){return n({event:"button_press",color:"blue",timestamp:e.timeStamp})})}();
+  </script>
+</html>

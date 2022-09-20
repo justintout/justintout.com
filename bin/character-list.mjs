@@ -26,7 +26,6 @@ import replace from 'replace-in-file';
             console.log(e);
         }
     }
-    // await server.close();
     await browser.close();
     process.exit(0);
 })();

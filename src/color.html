@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectrum RGB Visualizer</title>
+  </head>
+  <body>
+    <h1>Convert Spectrum RGB to hex.</h1>
+    <p> 
+      Spectrum RGB is one of the ways to represent color in Nest Smart Home Actions.
+      Spectrum RGB is just a hex value as an integer.
+      This is a handy utility to visualize these colors and get a hex value from them.
+    </p>
+    <div id="inputContainer">
+      <form>
+        <div id="spectrumContainer">
+          <label for="spectrumInput">Spectrum RGB: </label>
+          <input type="number" pattern="^[0-9]+$" name="spectrumInput" id="spectrumInput" onkeypress="return isNumberInputEvent(event);">
+          <span></span>
+        </div>
+        <div id="hexContainer">
+          <label for="hexOutput">Hex: </label>
+          <input type="text" name="hexOutput" id="hexOutput" readonly>
+        </div>
+        <div id="rgbContainer">
+          <div>
+            <label for="rOutput">R: </label>
+            <input type="text" name="rOutput" id="rOutput" readonly>
+          </div>
+          <div>
+            <label for="gOutput">G: </label>
+            <input type="text" name="gOutput" id="gOutput" readonly>
+          </div>
+          <div>
+            <label for="bOutput">B: </label>
+            <input type="text" name="bOutput" id="bOutput" readonly>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    !function(){function t(t){return t.toString(16).length%2==0?t.toString(16):"0"+t.toString(16)}function e(t){return/^[0-9]+$/.test(t)}function r(t){console.error('"'.concat(t,'" is not a positive integer'));var e=document.querySelector("#spectrumInput"),r=e.style.color;return e.classList.add("bad"),setTimeout(function(){e.classList.remove("bad"),e.style.color=r},3e3),!1}var u=document.querySelector("#spectrumInput"),n=document.querySelector("#hexOutput"),o=document.querySelector("#rOutput"),c=document.querySelector("#gOutput"),l=document.querySelector("#bOutput"),a=document.querySelector("body");u.onkeypress=function(t){return!!e(t.key)||r()},u.onpaste=function(t){return!!e(t.clipboardData.getData("text/plain"))||r()},u.addEventListener("input",function(e){var r;rgb={r:(r=u.value)>>16&255,g:r>>8&255,b:255&r},hex="#"+t(rgb.r)+t(rgb.g)+t(rgb.b),n.value=hex,o.value=rgb.r,c.value=rgb.g,l.value=rgb.b,a.style.background=hex,function(t){return.2126*t.r+.7152*t.g+.0722*t.b}(rgb)>127.5?a.style.color="black":a.style.color="white"})}();
+  </script>
+  <style>
+    body{
+      margin-right: 20rem;
+      margin-left: 20rem;
+    }
+    #inputContainer{
+      display: flex;
+      flex-direction: column;
+    }
+    input.bad{
+      background: red;
+    }
+    input.bad+span:after{
+      content: "Positive integers only.";
+    }
+    input{
+      transition: background .5s ease-in-out;
+    }
+    input+span:after{
+      transition: content .5s ease-in-out;
+    }
+    label{
+      display:inline-block;
+      width: 20rem;
+      text-align:right;
+      margin-right: 1rem;
+    }
+    div#spectrumContainer{
+      margin-bottom: 2rem;
+    }
+    div#hexContainer{
+      margin-bottom: 1rem;
+    }
+  </style>
+</html>

@@ -35,18 +35,18 @@ body {
     background: repeating-linear-gradient(
         -69deg,
         var(--wrap-background-color),
-        var(--wrap-background-color), 25px,
+        var(--wrap-background-color), 50px,
         var(--wrap-accent-color) 25px,
         var(--wrap-accent-color) 71px
       );
     display: grid;
     grid-template-rows: 10ch 1fr 5ch;
-    grid-template-columns: 1ch 90ch 1ch;
+    grid-template-columns: 1px auto 1px;
     grid-template-areas: 
         ". header ."
         ". main ." 
         ". footer .";
-    grid-row-gap: 3ch;
+    grid-row-gap: 1px;
     max-width: 92ch;
     align-items: center;
     min-height: 100vh;
@@ -106,6 +106,10 @@ aside {
     max-width: 60ch;
 }
 
+img {
+    width: 100%;
+    object-fit: cover;
+}
 
 article {
     margin: auto;

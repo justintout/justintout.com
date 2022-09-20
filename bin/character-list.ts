@@ -25,7 +25,6 @@ import Bundler, { ParcelOptions } from 'parcel-bundler';
         }
         const bundler = new Bundler(files, bundlerOptions);
         const server = await bundler.serve(1234, false, 'localhost');
-        
         for (let p of files.map(x=>path.basename(x))) {
             try {
                 const letterSet = new Set<string>();
@@ -39,10 +38,12 @@ import Bundler, { ParcelOptions } from 'parcel-bundler';
                     from: /&display=swap/,
                     to: `&display=swap&text=${s}`
                 });
+                console.log(results);
             } catch (e) {
                 console.log(e);
             }
         }
+        server.close();
         process.exit(0);
     });
 })();

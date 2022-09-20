@@ -2,9 +2,10 @@
   "name": "justintout.com",
   "version": "1.0.0",
   "description": "",
+  "source": "src/index.html",
   "scripts": {
-    "start": "parcel src/**.html",
-    "build": "npx ts-node bin/character-list.ts && parcel build src/**.html"
+    "start": "parcel",
+    "build": "npx ts-node bin/character-list.ts && parcel build"
   },
   "author": "Justin Tout",
   "devDependencies": {

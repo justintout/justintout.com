@@ -51,7 +51,7 @@ a {
     font-family: var(--header-font-family);
 }
 
-p, span {
+p, span, li {
     color: var(--text-color);
 }
 

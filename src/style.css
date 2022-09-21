@@ -147,17 +147,27 @@ article {
     padding-block: 1ch;
 }
 
+article div.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+article div.article-header span {
+    display: inline-block;
+}
+
 article p {
     font-family: var(--copy-font-family);
     font-weight: 300;
     font-size: 16px;
 }
 
-article h2.collapsed ~ div > p:nth-child(n+3) { 
+article.collapsed div.article-body > p:nth-child(n+2) { 
     display: none;
 }
 
-article h2.expanded ~ div > p:nth-child(n+3) {
+article div.article-header h2.expanded ~ div.article-body > p:nth-child(n+2) {
     display: block;
 }
 

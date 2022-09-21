@@ -7,6 +7,10 @@ function main() {
         }
         expandArticle(id);
     });
+    if (window.location.hash) {
+        const id = window.location.hash.slice(1);
+        expandArticle(id);
+    }
 }
 
 function titleFromSlug(slug: string): string {
@@ -28,12 +32,16 @@ function expandArticle(slug: string) {
     if (slug == '') {
         return;
     }
-    document.querySelector<HTMLHeadingElement>(`#${slug}`)!.classList.replace('collapsed', 'expanded');
-    const a = document.querySelector<HTMLAnchorElement>(`#${slug} ~ a.article-expander`);
+    const article = document.querySelector<HTMLElement>(`#${slug}`)?.parentElement?.parentElement;
+    if (!article) {
+        return;
+    }
+    article.classList.replace('collapsed', 'expanded');
+    const a = article?.querySelector<HTMLAnchorElement>(`a.article-expander`);
     if (a) {
         a.text = '...enough';
         a.addEventListener('click', () => {
-            collapseArticle(slug);
+            collapseArticle(article);
             a.addEventListener('click', () => {
                 expandArticle(slug);
             }, {once: true});
@@ -42,12 +50,9 @@ function expandArticle(slug: string) {
     }
 }
 
-function collapseArticle(slug: string) {
-    if (slug == '') {
-        return;
-    }
-    document.querySelector<HTMLHeadingElement>(`#${slug}`)!.classList.replace('expanded', 'collapsed');
-    const a = document.querySelector<HTMLAnchorElement>(`#${slug} ~ a.article-expander`);
+function collapseArticle(article: HTMLElement) {
+    article.classList.replace('expanded', 'collapsed');
+    const a = article.querySelector<HTMLAnchorElement>(`a.article-expander`);
     if (a) {
         a.text = 'more...';
     }

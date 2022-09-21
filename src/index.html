@@ -58,8 +58,37 @@
 
         <div id="the-blog"></div>
         <hr class="blog-divider">
-        <article>
-            <h2 class="collapsed" id="what-a-long-march">we're back as if we ever started</h2>
+
+        <article class="collapsed">
+            <div class="article-header">
+                <h2 id="its-this-or-games">maintenance has been nice</h2>
+                <span>2022-09-21</span>
+            </div>
+            <div class="article-body">
+                <p>
+                    It's been nice working on this page again. It's a bit of a welcomed break from daily complexity. 
+                </p>
+                <p>
+                    Beside actually adding content, I've made the style a bit nicer and upgraded to Caddy 2. The upgrade was really simple.
+                    A few, quick edits to the Caddyfile and we were off to the races. A proper <code>caddy</code> user actually runs the server
+                    now, and I've got everything except the Action written to do automatic deployment. Feels good.
+                </p>
+                <p>
+                    I can already feel the desire to grow complexity like crazy. I could template a lot of this out. I could render these posts from
+                    Markdown somewhere else in the repo. I could switch to Svelte or htmx or start using Sass or whatever else. Everyone says not to.
+                    I think they're right. I just need to press on and remind myself to keep writing posts. The design will evolve. 
+                </p>
+            </div>
+            <a class="article-expander" href="#its-this-or-games">more... <noscript>(actually just back to the top, sorry! need js to collapse these)</noscript></a>
+        </article>
+
+        <hr class="post-divider">
+
+        <article class="collapsed">
+            <div class="article-header">
+                <h2 id="what-a-long-march">we're back as if we ever started</h2>
+                <span>2022-09-20</span>
+            </div>
             <div class="article-body">
                 <p>
                     Realizing this is the first update since before COVID. It's surreal to look back and see this as a relic of <em>the before times.</em>
@@ -75,9 +104,9 @@
                 <p>
                     Work's lame though and I'm a super cool guy so here's our dog: 
                     <img src="./assets/mango.jpg" alt="A picture of, in my opinion, the cutest dog you'll ever meet.">
-                    Her name is Mango Mae and we adopted her in Feburary 2021. She was found on the street, neglected, some time in 2017. She was over 25 pounds underweight and
+                    Her name is Mango Mae and we adopted her in February 2021. She was found on the street, neglected, some time in 2017. She was over 25 pounds underweight and
                     trying to support a litter of 6 puppies. She was passed between rescue and foster groups for years until we were lucky enough to call her our own. 
-                    We made it through heartworm, spay, and an attack from an incredibly irresponisble trail-goer. I'm grateful every day to have her in my life and do what I can
+                    We made it through heartworm, spay, and an attack from an incredibly irresponsible trail-goer. I'm grateful every day to have her in my life and do what I can
                     to give her the comfortable life she's earned after all she's been through.
                 </p>
                 <p>
@@ -89,9 +118,13 @@
 
         <hr class="post-divider">
 
-        <article class="">
-            <h2 class="collapsed" id="test-article-please-ignore">dont worry about this just a magic spell</h2>
+        <article class="collapsed">
+            <div class="article-header">
+                <h2 id="test-article-please-ignore">don't worry about this just a magic spell</h2>
+                <span>who knows</span>
+            </div>
             <div class="article-body">
+                <!-- spell-checker: disable -->
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae atque eaque blanditiis, neque delectus alias voluptate ad ipsum accusamus cumque non aspernatur distinctio iure? Maiores consectetur commodi excepturi molestias obcaecati!</p>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae atque eaque blanditiis, neque delectus alias voluptate ad ipsum accusamus cumque non aspernatur distinctio iure? Maiores consectetur commodi excepturi molestias obcaecati!</p>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae atque eaque blanditiis, neque delectus alias voluptate ad ipsum accusamus cumque non aspernatur distinctio iure? Maiores consectetur commodi excepturi molestias obcaecati!</p>
@@ -110,6 +143,7 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae atque eaque blanditiis, neque delectus alias voluptate ad ipsum accusamus cumque non aspernatur distinctio iure? Maiores consectetur commodi excepturi molestias obcaecati!</p>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae atque eaque blanditiis, neque delectus alias voluptate ad ipsum accusamus cumque non aspernatur distinctio iure? Maiores consectetur commodi excepturi molestias obcaecati!</p>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae atque eaque blanditiis, neque delectus alias voluptate ad ipsum accusamus cumque non aspernatur distinctio iure? Maiores consectetur commodi excepturi molestias obcaecati!</p>
+                <!-- spell-checker: enable -->
             </div>
             <a class="article-expander" href="#test-article-please-ignore">more... <noscript>(actually just back to the top, sorry! need js to collapse these)</noscript></a>
         </article>

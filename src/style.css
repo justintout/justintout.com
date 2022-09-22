@@ -21,7 +21,7 @@ code, pre {
     :root {
         --wrap-background-color: #111;
         --text-color: #dfdae7;
-        --wrap-accent-color: #9957b8;
+        --wrap-accent-color: #c191d7;
         --copy-background-color: var(--wrap-background-color);
     }
 }

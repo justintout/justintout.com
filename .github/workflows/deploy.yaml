@@ -33,6 +33,7 @@ jobs:
         SSH_KEY: ${{secrets.SSH_KEY}}
         SSH_KNOWN: ${{secrets.SSH_KNOWN}}
     - name: sync dist to server
-      run: rsync -e "ssh -i $HOME/.ssh/key" -rzvh --delete dist/ github@justintout.com:
+      run: |
+        rsync -e "ssh -i $HOME/.ssh/key" -rzvh --delete dist/ github@justintout.com:
 
     

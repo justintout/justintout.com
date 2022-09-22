@@ -1,0 +1,38 @@
+name: deploy website
+
+on: 
+  push:
+    branches: 
+    - master
+    paths: 
+    - src/**
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    name: build and deploy the site
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 17
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build
+    - name: set up ssh keys
+      run: |
+        install -m 600 -D /dev/null ~/.ssh/key
+        echo "$SSH_KEY" > ~/.ssh/key
+        chmod 0600 ~/.ssh/key
+        echo "$SSH_KNOWN" > ~/.ssh/known_hosts
+      env:
+        SSH_KEY: ${{secrets.SSH_KEY}}
+        SSH_KNOWN: ${{secrets.SSH_KNOWN}}
+    - name: sync dist to server
+      run: rsync -e "ssh -i $HOME/.ssh/key" -rzvh --delete dist/ github@justintout.com:
+
+    

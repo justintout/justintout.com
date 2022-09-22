@@ -71,6 +71,35 @@
                     the website should get built and deployed. In reality, we're about to find out what happens.
                     I'll explain in a second...
                 </p>
+                <br>
+                <br>
+                <p>
+                    Ah, now see, that didn't work. Not that I expected it to, but still. Let me explain what I have
+                    set up so far, then we'll get this fixed.
+
+                    I've got my site running on a basic Debian server somewhere in the ether. It's served with 
+                    <a href="https://caddyserver.com/">Caddy</a>. The website repo is hosted 
+                    <a href="https://github.com/justintout/justintout.com">on GitHub</a> and there's a workflow 
+                    to build it then copy it over to the server.
+                </p>
+                <p>
+                    The website is bundled with <a href="https://parceljs.org/">Parcel</a>. If you check the <pre>package.json</pre>,
+                    you can see Parcel will bundle, optimize, etc the source files and spit everything out into a new <pre>dist/</pre>
+                    directory. The files in <pre>dist/</pre> need to be copied over to the directory they're served from on the server.
+                    We'll use <a href="https://rsync.samba.org/">rsync</a> to do that. 
+                </p>
+                <p>
+                    The server has a <pre>github</pre> user. It's not allowed to log in, it doesn't have a shell, it's basically only 
+                    there to receive files from our Github Action. In fact, that's the <em>only</em> command that will run whenever 
+                    the <pre>github</pre> user connects. The Github user has an authorized SSH key stored as a secret in the Github repo.
+                    Command restriction is accomplished with the really neat <pre>rrsync</pre> script that comes bundled with rsync. 
+                </p>
+                <p>
+                    The reason why that first attempt didn't work was a little tricky. SSH connections validate a server's fingerprint
+                    when you first connect. If you check the Action, I copy both the private key and the <pre>known_hosts</pre> file to 
+                    the runner's <pre>.ssh</pre> directory. Well-what-had-happened-was that key was coped incorrectly in my repository secrets.
+                    Let me update that and try this again...
+                </p>
             </div>
             <a class="article-expander" href="#i-hope-this-is-safe">more... <noscript>(actually just back to the top, sorry! need js to collapse these)</noscript></a>
         </article>

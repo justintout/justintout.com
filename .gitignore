@@ -6,3 +6,4 @@ Makefile
 /test-results/
 /playwright-report/
 /playwright/.cache/
+.DS_Store

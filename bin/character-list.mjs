@@ -2,7 +2,7 @@
 import { readFile } from 'fs/promises';
 import glob from 'glob-promise';
 import { load } from 'cheerio';
-import replace from 'replace-in-file';
+import { replaceInFile } from 'replace-in-file';
 
 const charactersIn = async (filepath) => {
   const html = await readFile(filepath, 'utf-8');
@@ -16,7 +16,7 @@ for (const f of files) {
   try {
     const chars = (await charactersIn(f)).join('');
     console.log(`${f}: ${chars}`);
-    const results = await replace({
+    const results = await replaceInFile({
       files: f,
       from: /&display=swap.*?">/g,
       to: `&display=swap&text=${chars}">`,

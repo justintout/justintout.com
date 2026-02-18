@@ -9,10 +9,10 @@
   },
   "author": "Justin Tout",
   "devDependencies": {
-    "glob-promise": "^5.0.0",
-    "parcel": "^2.7.0",
-    "parcel-bundler": "^1.3.1",
-    "replace-in-file": "^5.0.2",
-    "typescript": "^3.7.4"
+    "cheerio": "^1.0.0",
+    "glob-promise": "^6.0.0",
+    "parcel": "^2.15.0",
+    "replace-in-file": "^8.0.0",
+    "typescript": "^5.8.0"
   }
 }

@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "rm -rf dist && parcel build && node bin/character-list.mjs"
+    "build": "rm -rf dist && parcel build && node bin/character-list.mjs && mkdir -p dist/assets && cp src/assets/mango-bw-og.png dist/assets/"
   },
   "author": "Justin Tout",
   "devDependencies": {

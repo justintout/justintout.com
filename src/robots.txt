@@ -1,4 +1,3 @@
 User-agent: *
-Allow: /*.html$
-Disallow: /api
-Sitemap: https://justintout.com/sitemap.txt
+Allow: /
+Sitemap: https://justintout.com/sitemap.xml

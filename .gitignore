@@ -1,9 +1,4 @@
 node_modules
-.cache
 dist
-Makefile
 .parcel-cache
-/test-results/
-/playwright-report/
-/playwright/.cache/
 .DS_Store

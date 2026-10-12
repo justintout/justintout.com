@@ -5,14 +5,11 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "rm -rf dist && parcel build && node bin/character-list.mjs && mkdir -p dist/assets && cp src/assets/mango-bw-og.png dist/assets/ && cp src/robots.txt src/sitemap.xml dist/"
+    "build": "rm -rf dist && parcel build && mkdir -p dist/assets && cp src/assets/mango-bw-og.png dist/assets/ && cp src/robots.txt src/sitemap.xml dist/"
   },
   "author": "Justin Tout",
   "devDependencies": {
-    "cheerio": "^1.0.0",
-    "glob-promise": "^6.0.0",
     "parcel": "^2.15.0",
-    "replace-in-file": "^8.0.0",
     "typescript": "^5.8.0"
   }
 }
